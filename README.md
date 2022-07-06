@@ -38,6 +38,8 @@ Pkg.add("Plots")
 
 ## Run examples
 
+- Create a directory name log in code_1D and in code_1D_XV.
+
 - To run examples you must download the code, go to job folder and open one of *job_example_evolution*. Then you must remplace the comment at **PREFIX** line to put your code_1D (or code_1D_XV) path. 
 
 For example, if you want to run the *job_example_evolution_xv.sh*, you must find the line **20** and put 
