@@ -43,7 +43,9 @@ Pkg.add("Plots")
 For example, if you want to run the *job_example_evolution_xv.sh*, you must find the line **20** and put 
 `PREFIX=home/user/Download/code_1D/` if the code_1D is located in Download.
 
-- Then launch the bash file : `.\job_example_evolution_xv.sh`, the output will be in *data/example* and a log file will be located in *log/example*.
+- Then give access to execute : `chmod +x job_example_evolution_xv.sh`
+
+- Finally launch the bash file : `.\job_example_evolution_xv.sh`, the output will be in *data/example* and a log file will be located in *log/example*.
 
 ## Output others parameters
 
