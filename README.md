@@ -3,6 +3,11 @@ This code compute the motion of N particles in an harmonic cores (i.e. constant 
 
 There is two code to compute this N-body problem. First the **code_1D** compute the real problem directly in **(x, v)** the true variable that appear in "real life". And then the **code_1D_XV** compute the **(X, V)** motion, without the *average harmonic motion* and with a time average. Notice that the **code_1D** propagate ONLY the **(x, v)** but can render the **(X, V)** motion by doing a variable change after having computed the **(x, v)** motion HOWEVER the motion is NOT average on time (that why *example* in phase space are "shaking" in **code_1D**). Inversly **code_1D_XV** compute ONLY the **(X, V)** motion AND is  average on time, so it cannot go back the true **(x, v)**.
 
+What we can get :
+
+![evolution_xv](https://user-images.githubusercontent.com/108795620/177579142-d092ceec-4d4e-4111-b980-bbd4a26481ca.png)
+
+
 ## Code_1D
 **Code_1D** propagate the motion with a classical leapfrog integrator, which is sympletic. The code must operate on dynamical time TD (time to do an orbit) and typically to avoid error, one must put 10<sup>-3</sup> TD as time step DT. The complexity of the algorithm is O(NlnN).
 
@@ -38,10 +43,7 @@ Pkg.add("Plots")
 
 ## Run examples
 
-
-
-https://user-images.githubusercontent.com/108795620/177578661-03184496-40de-4e6c-bb7e-31886bce9463.mp4
-
+![example_evolution_xv](https://user-images.githubusercontent.com/108795620/177580140-7b0c4991-2be8-42e1-be9d-0b659f0b5e74.gif)
 
 
 - To run examples you must download the code, go to job folder and open one of *job_example_evolution*. Then you must remplace the comment at **PREFIX** line to put your code_1D (or code_1D_XV) path. 
