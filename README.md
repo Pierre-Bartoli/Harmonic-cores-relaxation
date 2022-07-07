@@ -9,16 +9,16 @@ What we can get :
 
 
 ## Code_1D
-**Code_1D** propagate the motion with a classical leapfrog integrator, which is sympletic. The code must operate on dynamical time TD (time to do an orbit) and typically to avoid error, one must put 10<sup>-3</sup> TD as time step DT. The complexity of the algorithm is O(NlnN).
+**Code_1D** integrates the dynamics using a classical leapfrog integrator, which is symplectic. The code operates on the dynamical time TD (orbital time) and typically, one picks 10<sup>-3</sup> TD as the time step DT. The complexity of the algorithm is O(NlnN).
 
 ## Code_1D_XV
-**Code_1D_XV** propagate the motion with different integrator as Runge-Kutta or Gauss-Legendre. The code operates on balistic time TB (time of deformation, TB = sqrt(N)TD) which is larger than TD, so integration can be faster BUT the integrator complexity is O(N<sup>2</sup>).
+**Code_1D_XV** integrates the dynamics with different integrators, such as Runge-Kutta or Gauss-Legendre. The code operates on the balistic time TB (time of deformation, TB = sqrt(N)TD). Hence timesteps are larger than TD, BUT the integrator complexity is O(N<sup>2</sup>).
 
 # How to use the code
-The code is in Julia, to make it run, you must install first some packages.
+The code is in julia. To run it, you must install first some packages.
 
 ## Packages
-To install package you have to launch Julia, and type in :
+To install packages, launch julia and type:
 
 ```
 using Pkg
