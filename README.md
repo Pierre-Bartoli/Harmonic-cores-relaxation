@@ -86,7 +86,7 @@ function write!(namefile::String)
     
 end
 ```
-And then you can read it with an other code. For example one can type in Julia this code :
+To access this data in another julia code, use:
 ```
 using HDF5
 
