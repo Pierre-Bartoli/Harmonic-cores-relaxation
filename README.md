@@ -46,7 +46,7 @@ Pkg.add("Plots")
 ![example_evolution_xv](https://user-images.githubusercontent.com/108795620/177580140-7b0c4991-2be8-42e1-be9d-0b659f0b5e74.gif)
 
 
-- To run the provided examples, download the code, go to job folder.
+- To run the provided examples, download the code, go to `job/Example` folder.
 
 - Then give access to execute: `chmod +x job_example_evolution_xv.sh`
 
