@@ -46,10 +46,7 @@ Pkg.add("Plots")
 ![example_evolution_xv](https://user-images.githubusercontent.com/108795620/177580140-7b0c4991-2be8-42e1-be9d-0b659f0b5e74.gif)
 
 
-- To run the provided examples, download the code, go to job folder and open one of the *job_example_evolution*. Then, replace the comment at **PREFIX** line to put your code_1D (or code_1D_XV) path. 
-
-For example, to run *job_example_evolution_xv.sh*, find the line **20** and write 
-`PREFIX=home/user/Download/code_1D/` if the code_1D is located in Download.
+- To run the provided examples, download the code, go to job folder.
 
 - Then give access to execute: `chmod +x job_example_evolution_xv.sh`
 
@@ -61,42 +58,3 @@ The preferable way to do it is:
 - Write your *Run.jl* in Run folder
 - Write *job.sh* in job folder to output the wanted parameters.
 - Do not forget to change **RUN**, **LOG** and **PATHFILE** argument in *job.sh* (where path file is the output file).
-
-## Use written file (if WRITE value is true)
-
-Writing information in the hf5 file is easy by using **WRITE**=true in *job.sh*. The desired information must be selected in the Run.jl, in the write! function:
-
-```
-function write!(namefile::String)
-
-    # suppress the previous file
-    if(isfile(namefile))# but to supress it be sure that it exist
-        rm(namefile) #remove it
-    end
-
-    file = h5open(namefile,"w") # Opening the file
-
-    write(file, "x_t", x_t) #put x_t array in "x_t"
-    write(file, "v_t", v_t)
-    write(file, "t", t)
-    
-    write(file, "value", value) #general value
-
-    close(file) # Closing the file
-    
-end
-```
-To access this data in another julia code, use:
-```
-using HDF5
-
-fid = h5open("path_to_hf5_file.hf5","r")
-
-#get x, v & time
-x_t = read(fid["x_t"])
-v_t = read(fid["v_t"])
-t = read(fid["t"])
-
-#general value (must be written in Run.jl)
-value = read(fid["value"])
-```
