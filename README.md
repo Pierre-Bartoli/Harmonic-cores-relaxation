@@ -3,7 +3,7 @@ This code computes the motion of N self-gravitating particles in a 1D harmonic c
 
 There are two codes for this this N-body problem. First the **code_1D** computes the dynamics directly in **(x, v)**. Second, **code_1D_XV** computes the dynamics within the **(X, V)** variables, with a time-averaged interaction potential. We note that **code_1D** propagates ONLY **(x, v)** but can render the **(X, V)** motion by doing a change of variables afterwards. HOWEVER this dynamics is NOT averaged on time (that's why particles "shaking" in **code_1D**). Inversly, **code_1D_XV** computes ONLY the **(X, V)** motion AND is averaged on time.
 
-What we can get :
+What we can get:
 
 ![evolution_xv](https://user-images.githubusercontent.com/108795620/177579142-d092ceec-4d4e-4111-b980-bbd4a26481ca.png)
 
@@ -46,25 +46,25 @@ Pkg.add("Plots")
 ![example_evolution_xv](https://user-images.githubusercontent.com/108795620/177580140-7b0c4991-2be8-42e1-be9d-0b659f0b5e74.gif)
 
 
-- To run examples you must download the code, go to job folder and open one of *job_example_evolution*. Then you must remplace the comment at **PREFIX** line to put your code_1D (or code_1D_XV) path. 
+- To run the provided examples, download the code, go to job folder and open one of the *job_example_evolution*. Then, replace the comment at **PREFIX** line to put your code_1D (or code_1D_XV) path. 
 
-For example, if you want to run the *job_example_evolution_xv.sh*, you must find the line **20** and put 
+For example, to run *job_example_evolution_xv.sh*, find the line **20** and write 
 `PREFIX=home/user/Download/code_1D/` if the code_1D is located in Download.
 
-- Then give access to execute : `chmod +x job_example_evolution_xv.sh`
+- Then give access to execute: `chmod +x job_example_evolution_xv.sh`
 
-- Finally launch the bash file : `.\job_example_evolution_xv.sh`, the output will be in *data/example* and a log file will be located in *log/example*.
+- Finally launch the bash file: `.\job_example_evolution_xv.sh`, the output will be in *data/example* and a log file will be located in *log/example*.
 
 ## Output others parameters
 
-The preferable way to do it is : 
-- you should write your *Run.jl* in Run folder
-- and write *job.sh* in job folder to output the wanted parameters.
-- don't forget to change **RUN**, **LOG** and **PATHFILE** argument in *job.sh* (where path file is the output file).
+The preferable way to do it is: 
+- Write your *Run.jl* in Run folder
+- Write *job.sh* in job folder to output the wanted parameters.
+- Do not forget to change **RUN**, **LOG** and **PATHFILE** argument in *job.sh* (where path file is the output file).
 
 ## Use written file (if WRITE value is true)
 
-You may want write information on hf5 file, to do so it is easy, with **WRITE**=true in *job.sh*. You must write information needed in the Run.jl, in write! function:
+Writing information in the hf5 file is easy by using **WRITE**=true in *job.sh*. The desired information must be selected in the Run.jl, in the write! function:
 
 ```
 function write!(namefile::String)
