@@ -17,7 +17,7 @@ SEED=1 #seed of the realisation
 
 JULIA=julia
 RUN=run/Example/Run_example_evolution_xv.jl
-PREFIX= #directory of the code
+PREFIX=../../
 LOG=log/log_example_evolution_xv
 
 cd ${PREFIX}
