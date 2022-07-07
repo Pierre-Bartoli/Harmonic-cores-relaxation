@@ -2,12 +2,12 @@
 PATHFILE=data/example/example_evolution_XV
 WRITE=false
 
-INTEGRATION=GL2 #integration scheme, here runge-kutta order 4
+INTEGRATION=GL2 #integration scheme, here gauss-legendre order 2
 
 NBATHPART=2000 #Number of bath particles
 NTESTPART=0 #Number of test particles
 
-DT=1 #10^1 TD
+DT=1 #1 TD
 NSTEPS=2
 NDUMP=100
 
@@ -19,7 +19,7 @@ SEED=1 #seed of the realisation
 
 JULIA=julia
 RUN=run/Example/Run_example_evolution_XV.jl
-PREFIX= #directory of the code
+PREFIX=../../
 LOG=log/log_example_evolution_XV
 
 cd ${PREFIX}
